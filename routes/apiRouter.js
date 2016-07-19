@@ -57,7 +57,13 @@ let Dish = require('../db/schema.js').Dish
 
  // this route will show us all the dieshes posted by all users
   apiRouter.get('/dishes', function(req, res){
-    Dish.find(request.query, function(err, rec){})
+    Dish.find(request.query, function(err, rec){
+      if(err){
+        res.send(err)
+      } else {
+        res.json(rec)
+      }
+    })
     //some methods live directly on the model
   })
 
