@@ -22,8 +22,8 @@ const dishSchema = new Schema({
    likes: {type: Number, default: 0},
    location: {type: String, required: true},
    title: {type: String, required: true},
-   username: {type: String, required: true},
-   imgurl: {type: String, required: true},
+   authorEmail: {type: String, required: true},
+   imgURL: {type: String, required: true},
    authorID: {type: String, required: true},
    tags: {type: [String], default: []}
 })

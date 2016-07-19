@@ -69,8 +69,12 @@ let Dish = require('../db/schema.js').Dish
   apiRouter.get('/user/dishes', function(request, response){
     // wanna get all dishes where the author id matches id of current user
     //if there is a user session then there is a user obj
-    Dish.find({authorID: request.user._id}, function(request, response){
-      
+    Dish.find({authorID: request.user._id}, function(err, rec){
+      if(err){
+        response.send(err)
+      } else {
+        response.json(rec)
+      }
     })
   })
 
