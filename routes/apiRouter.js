@@ -42,6 +42,17 @@ let Dish = require('../db/schema.js').Dish
     })
 
     // Routes for a Model(resource) should have this structure
-
+   //  this route will create a brand new dish that we will put in the db
+  apiRouter.post('/dishes', function(req, res){
+     let dish = new Dish(req.body) //create new instance of schema
+   //   req.body is all the information we gathered from the client side
+     dish.save(function(err){ //handling errors
+        if(err){
+           res.send(err)
+        } else {
+           res.json(dish)
+        }
+     })
+ })
 
 module.exports = apiRouter
