@@ -48,11 +48,18 @@ let Dish = require('../db/schema.js').Dish
    //   req.body is all the information we gathered from the client side
      dish.save(function(err){ //handling errors
         if(err){
-           res.send(err)
+          res.send(err)
         } else {
-           res.json(dish)
+          res.json(dish)
         }
      })
  })
+
+ // this route will show us all the dieshes posted by all users
+  apiRouter.get('/dishes', function(req, res){
+    Dish.find(request.query, function(err, rec){})
+    //some methods live directly on the model
+  })
+
 
 module.exports = apiRouter
