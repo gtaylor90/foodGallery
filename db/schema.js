@@ -24,6 +24,7 @@ const dishSchema = new Schema({
    title: {type: String, required: true},
    username: {type: String, required: true},
    imgurl: {type: String, required: true},
+   authorID: {type: String, required: true},
    tags: {type: [String], default: []}
 })
 
