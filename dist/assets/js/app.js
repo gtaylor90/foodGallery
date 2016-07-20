@@ -1,1 +1,1 @@
-console.error("Error: Cannot find module './header' from '/Users/Graham/Documents/TIY/inClass/foodGallery/src/scripts/views'");
+console.error("Error: Cannot find module '../actions' from '/Users/Graham/Documents/TIY/inClass/foodGallery/src/scripts/views'");

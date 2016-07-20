@@ -12,10 +12,25 @@ const app = function() {
       "dish/postDishes": "handlePostDish",
       "dish/myDishes": "handleMyDishes",
       "login": "handleLogin",
-      "*catchall": "default"
+      "*catchall": "handleRedirect"
     },
-    
+    handleHome: function(){
+      ReactDOM.render(<Dashboard />, document.querySelector('.container'))
+    },
+    handlePostDish: function(){
+      ReactDOM.render(<ComposeView />, document.querySelector('.container'))
+    },
+    handleMyDishes: function(){
+      ReactDOM.render(<DishView />, document.querySelector('.container'))
+    },
+    handleLogin: function(){
+      ReactDOM.render(<LogInView />, document.querySelector('.container'))
+    },
+    handleRedirect: function(){
+      location.hash
+    }
   })
+
 }
 
 // x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..
