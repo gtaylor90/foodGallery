@@ -24,7 +24,7 @@ const app = function() {
       ReactDOM.render(<DishesView />, document.querySelector('.container'))
     },
     handleLogin: function(){
-      ReactDOM.render(<LogInView />, document.querySelector('.container'))
+      ReactDOM.render(<LoginView />, document.querySelector('.container'))
     },
     handleRedirect: function(){
       location.hash = "home"
