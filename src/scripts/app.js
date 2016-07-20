@@ -21,16 +21,20 @@ const app = function() {
       ReactDOM.render(<ComposeView />, document.querySelector('.container'))
     },
     handleMyDishes: function(){
-      ReactDOM.render(<DishView />, document.querySelector('.container'))
+      ReactDOM.render(<DishesView />, document.querySelector('.container'))
     },
     handleLogin: function(){
       ReactDOM.render(<LogInView />, document.querySelector('.container'))
     },
     handleRedirect: function(){
-      location.hash
+      location.hash = "home"
+    },
+    initialize: function(){
+      Backbone.history.start()
     }
-  })
 
+  })
+  new AppRouter()
 }
 
 // x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..

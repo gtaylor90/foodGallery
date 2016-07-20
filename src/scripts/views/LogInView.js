@@ -1,6 +1,6 @@
 import React from 'react'
 import ACTIONS from '../actions'
-import Header from './header'
+import Header from './Header'
 
 const LoginView = React.createClass({
 	render: function() {
@@ -18,8 +18,11 @@ const RegisterBox = React.createClass({
 
 	_handleRegister: function(evt) {
 		evt.preventDefault()
-		ACTIONS.registerUser(
-      evt.currentTarget.email.value,evt.currentTarget.password.value)
+		ACTIONS.registerUser({
+      email: evt.currentTarget.email.value,
+      password: evt.currentTarget.password.value,
+      name: evt.currentTarget.userName.value
+    })
 	},
 
 	render: function() {
@@ -29,7 +32,7 @@ const RegisterBox = React.createClass({
 					<h3>Register</h3>
 					<input type="email" name="email"
           placeholder="enter your email" />
-          <input type="text" name="name"
+          <input type="text" name="userName"
           placeholder="please enter your name" />
 					<input type="password" name="password"
           placeholder="enter a password" />
