@@ -28,6 +28,9 @@ authorID: {type: String, required: true},
 tags: {type: [String], default: []}
 */
 const DishPostingForm = React.createClass({
+	_handleImage: function(){
+			this.url = result.url
+	},
 	_handlePost: function(evt) {
 			evt.preventDefault()
 			ACTIONS.saveDish({
@@ -36,7 +39,7 @@ const DishPostingForm = React.createClass({
 				location: evt.currentTarget.postLocation.value,
 				title:  evt.currentTarget.postTitle.value,
 				authorEmail: User.getCurrentUser().email,
-				imgURL: "",
+				imgURL: ,
 				authorID: User.getCurrentUser()._id
 			})
 	},
@@ -54,8 +57,8 @@ const DishPostingForm = React.createClass({
 					placeholder="enter the Location" />
 					<input type="text" name="rating"
 					placeholder="enter the Rating" />
-					<ReactFilepicker apikey="AwiKcYMD9QNOLulFmXWZPz"
-					onSuccess={console.log('yup')}/>
+					<ReactFilepicker name="imgPicker" apikey="Arahj1MITmuGYhR7rT0FNz"
+					onSuccess={}/>
 					{/*fix the styling on this*/}
 					<button type="submit">Post dat</button>
 				</form>
