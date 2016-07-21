@@ -23,6 +23,7 @@ const RegisterBox = React.createClass({
       password: evt.currentTarget.password.value,
       name: evt.currentTarget.userName.value
     })
+    evt.currentTarget.reset()
 	},
 
 	render: function() {
@@ -47,6 +48,7 @@ const LoginBox = React.createClass({
 	_handleLogin: function(evt) {
 		evt.preventDefault()
 		ACTIONS.logUserIn(evt.target.email.value,evt.target.password.value)
+    evt.currentTarget.reset()
 	},
 
 	render: function() {
