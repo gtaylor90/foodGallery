@@ -39,7 +39,7 @@ const DishPostingForm = React.createClass({
 				location: evt.currentTarget.postLocation.value,
 				title:  evt.currentTarget.postTitle.value,
 				authorEmail: User.getCurrentUser().email,
-				imgURL: this.url ? this.url : '../assets/images/im-not-found.png',
+				imgURL: this.url ? this.url : '../assets/images/img-not-found.png',
 				authorID: User.getCurrentUser()._id
 			})
 	},

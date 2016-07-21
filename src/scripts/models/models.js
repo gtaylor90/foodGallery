@@ -6,7 +6,10 @@ const DishModel = Backbone.Model.extend({
 	urlRoot: '/api/dishes',
 	idAttribute: '_id'
 })
-
+const DishCollection = Backbone.Collection.extend({
+	model: new DishModel,
+	idAttribute: '_id'
+})
 // ..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x
 const UserAuthModel = Backbone.Model.extend({
 	urlRoot: '/api/users',
@@ -56,4 +59,4 @@ const User = UserAuthModel.extend({
 	}
 })
 
-export { User, DishModel }
+export { User, DishModel, DishCollection }
