@@ -8,7 +8,6 @@ import DishesView from './views/dishesView'
 import ComposeView from './views/composeView'
 import {User} from './models/models'
 
-//STEP 5 (build your client side api routes)
 const app = function() {
   const AppRouter = Backbone.Router.extend({
     routes: {
@@ -31,7 +30,7 @@ const app = function() {
       ReactDOM.render(<LoginView />, document.querySelector('.container'))
     },
     handleRedirect: function(){
-      location.hash = "home"
+      location.hash= "home"
     },
     initialize: function(){
       Backbone.history.start()

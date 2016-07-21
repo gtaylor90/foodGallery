@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './header'
 import ACTIONS from '../actions'
 import {User} from '../models/models'
+import {DishModel} from '../models/models'
 
 const ComposeView = React.createClass({
 	 render: function() {
@@ -28,15 +29,15 @@ tags: {type: [String], default: []}
 const DishPostingForm = React.createClass({
 	_handlePost: function(evt) {
 			evt.preventDefault()
-			ACTIONS.foodPost({
+			ACTIONS.saveDish({
 				description: evt.currentTarget.postDescription.value,
 				rating: evt.currentTarget.postDescription.value,
 				likes: 5,
 				location: evt.currentTarget.postLocation.value,
 				title:  evt.currentTarget.postTitle.value,
-				authorEmail: User.getCurrent().email,
+				authorEmail: User.getCurrentUser().email,
 				imgURL: "",
-				authorID: User.getCurrent()._id
+				authorID: User.getCurrentUser()._id
 			})
 	},
 	render: function() {
@@ -45,7 +46,7 @@ const DishPostingForm = React.createClass({
 				<form onSubmit={this._handlePost} >
 					<input type="text" name="postTitle"
 					placeholder="enter the dish title" />
-					<textarea class="u-full-width"
+					<textarea className="u-full-width"
 					name="postDescription"
 					placeholder="Describe dat food"></textarea>
 					{/*fix the styling on this*/}

@@ -1,5 +1,7 @@
 
 import {User} from './models/models.js'
+import {DishModel} from './models/models.js'
+
 
 const ACTIONS = {
   registerUser: function(userObj){
