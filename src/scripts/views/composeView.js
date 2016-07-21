@@ -3,6 +3,7 @@ import Header from './header'
 import ACTIONS from '../actions'
 import {User} from '../models/models'
 import {DishModel} from '../models/models'
+import ReactFilepicker from 'react-filepicker';
 
 const ComposeView = React.createClass({
 	 render: function() {
@@ -32,7 +33,6 @@ const DishPostingForm = React.createClass({
 			ACTIONS.saveDish({
 				description: evt.currentTarget.postDescription.value,
 				rating: evt.currentTarget.postDescription.value,
-				likes: 5,
 				location: evt.currentTarget.postLocation.value,
 				title:  evt.currentTarget.postTitle.value,
 				authorEmail: User.getCurrentUser().email,
@@ -54,6 +54,8 @@ const DishPostingForm = React.createClass({
 					placeholder="enter the Location" />
 					<input type="text" name="rating"
 					placeholder="enter the Rating" />
+					<ReactFilepicker apikey="AwiKcYMD9QNOLulFmXWZPz"
+					onSuccess={console.log('yup')}/>
 					{/*fix the styling on this*/}
 					<button type="submit">Post dat</button>
 				</form>
