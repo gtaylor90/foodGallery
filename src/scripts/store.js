@@ -13,9 +13,11 @@ const DISH_STORE = _.extend(Backbone.Events, {
 
   },
 
-  initialize: function(){
+  _initialize: function(){
     this.data.collection.on('sync update', this._emitChange.bind(this))
   }
 })
+
+DISH_STORE._initialize()
 
 export default DISH_STORE
