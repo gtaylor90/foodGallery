@@ -12,7 +12,7 @@ const DISH_STORE = _.extend(Backbone.Events, {
     return _.clone(this.data)
   },
 
-  emitChange: function(){
+  _emitChange: function(){
     this.trigger('updateContent')
 
   },

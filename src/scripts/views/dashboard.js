@@ -10,17 +10,23 @@ const Dashboard = React.createClass({
 	},
 
 	componentWillMount: function() {
+		ACTIONS.fetchDishes()
 		DISH_STORE.on('updateContent',
 		(obj)=> {
 			this.setState(DISH_STORE.getData())
 		})
 	},
+
+	componentWillUnmount: function() {
+		DISH_STORE.off('updateContent')
+	},
+
 	render: function() {
 	 return (
 	 	<div className='dashboard' >
 	 		<Header />
 	 		<h3>dashboard</h3>
-	 		<DishContainer />
+	 		<DishContainer dishColl={this.state.collection} />
 	 	</div>
 	 )
  }
@@ -28,8 +34,12 @@ const Dashboard = React.createClass({
 
 const DishContainer = React.createClass({
 	render: function() {
+		console.log(this.props.dishColl);
+		console.log('rendering the DishContainer');
 		return (
 			<div className="dishContainer">
+			{this.props.dishColl.map(
+				(model)=> <Dish dishModel={model} key = {model.id} /> )}
 			</div>
 			)
 	}
@@ -37,6 +47,8 @@ const DishContainer = React.createClass({
 
 const Dish = React.createClass({
 	render: function() {
+		console.log(this.props.dishModel);
+		console.log('rendering a dish');
 		return (
 			<div className="dish">
 				<p>{this.props.dishModel.get('title')}</p>

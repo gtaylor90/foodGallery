@@ -28,10 +28,11 @@ authorID: {type: String, required: true},
 tags: {type: [String], default: []}
 */
 const DishPostingForm = React.createClass({
-	_handleImage: function(){
+	_handleImage: function(result){
 			this.url = result.url
 	},
 	_handlePost: function(evt) {
+			console.log(`some kinda event ${evt.currentTarget}`);
 			evt.preventDefault()
 			ACTIONS.saveDish({
 				description: evt.currentTarget.postDescription.value,
