@@ -7,8 +7,8 @@ const DishModel = Backbone.Model.extend({
 	idAttribute: '_id'
 })
 const DishCollection = Backbone.Collection.extend({
-	model: new DishModel,
-	idAttribute: '_id'
+	model: DishModel,
+	url: '/api/dishes'
 })
 // ..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x
 const UserAuthModel = Backbone.Model.extend({

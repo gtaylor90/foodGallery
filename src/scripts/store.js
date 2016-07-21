@@ -8,6 +8,10 @@ const DISH_STORE = _.extend(Backbone.Events, {
     collection: new DishCollection()
   },
 
+  _getData: function(){
+    return _.clone(this.data)
+  },
+
   emitChange: function(){
     this.trigger('updateContent')
 
