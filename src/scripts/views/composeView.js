@@ -49,15 +49,16 @@ const DishPostingForm = React.createClass({
 				<form onSubmit={this._handlePost} >
 					<input type="text" name="postTitle"
 					placeholder="enter the dish title" />
+					<input type="text" name="rating"
+					placeholder="enter the Rating" />
+					<input type="text" name="postLocation"
+					placeholder="enter the Location" />
 					<textarea className="u-full-width"
 					name="postDescription"
 					placeholder="Describe dat food"></textarea>
 					{/*fix the styling on this*/}
-					<input type="text" name="postLocation"
-					placeholder="enter the Location" />
-					<input type="text" name="rating"
-					placeholder="enter the Rating" />
-					<ReactFilepicker name="imgPicker" apikey="Arahj1MITmuGYhR7rT0FNz"
+					<ReactFilepicker name="imgPicker"
+					apikey="Arahj1MITmuGYhR7rT0FNz"
 					onSuccess={this._handleImage}/>
 					{/*fix the styling on this*/}
 					<button type="submit">Post dat</button>
