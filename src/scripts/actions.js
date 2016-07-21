@@ -27,6 +27,10 @@ const ACTIONS = {
     User.logout().then(
       ()=> location.hash="login"
     )
+  },
+  saveDish: function(dishObj){
+    var dish = new DishModel(dishObj)
+    dish.save()
   }
 }
 

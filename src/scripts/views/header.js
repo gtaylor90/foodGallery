@@ -7,7 +7,7 @@ const Header = React.createClass({
     render: function() {
         return (
             <div id="headerContainer">
-                <marquee height="50" direction="up" >Food Mood</marquee>
+                <h1>FoodMood</h1>
                 <NavBar />
             </div>
             )
@@ -18,11 +18,11 @@ const NavBar = React.createClass({
     render: function() {
         return (
             <div id="navBar"> {/*made a few edits here so that is makes sense for this app*/}
-                <a href="#login">Log In</a>
-                <a href="#home">Home</a>
-                <a href="#dish/myDishes">My Dishes</a>
-                <a href="#dish/postDishes">Post Dish</a>
-                <a href="#" onClick={ACTIONS.logUserOut}>Log Out</a>
+                <a className="button" href="#login">Log In</a>
+                <a className="button" href="#home">Home</a>
+                <a className="button" href="#dish/myDishes">My Dishes</a>
+                <a className="button" href="#dish/postDishes">Post Dish</a>
+                <a className="button" href="#" onClick={ACTIONS.logUserOut}>Log Out</a>
             </div>
             )
     }

@@ -32,9 +32,12 @@ const RegisterBox = React.createClass({
             <div className="loginBox register">
                 <form onSubmit={this._handleRegister} >
                     <h3>Register</h3>
-                    <input name = 'userName' placeholder = 'please enter your name' /> {/* ADDED ONE INPUT*/}
-                    <input type="email" name="email" placeholder="enter your email" />
-                    <input type="password" name="password" placeholder="enter a password" />
+                    <input type="text" name = 'userName'
+                    placeholder = 'please enter your name' />
+                    <input type="email" name="email"
+                    placeholder="enter your email" />
+                    <input type="password" name="password"
+                    placeholder="enter a password" />
                     <button type="submit">sign up!</button>
                 </form>
             </div>
