@@ -39,7 +39,7 @@ const DishPostingForm = React.createClass({
 				location: evt.currentTarget.postLocation.value,
 				title:  evt.currentTarget.postTitle.value,
 				authorEmail: User.getCurrentUser().email,
-				imgURL: ,
+				imgURL: this.url ? this.url : '../assets/images/im-not-found.png',
 				authorID: User.getCurrentUser()._id
 			})
 	},
@@ -58,7 +58,7 @@ const DishPostingForm = React.createClass({
 					<input type="text" name="rating"
 					placeholder="enter the Rating" />
 					<ReactFilepicker name="imgPicker" apikey="Arahj1MITmuGYhR7rT0FNz"
-					onSuccess={}/>
+					onSuccess={this._handleImage}/>
 					{/*fix the styling on this*/}
 					<button type="submit">Post dat</button>
 				</form>
