@@ -1,17 +1,29 @@
 import React from 'react'
 import Header from './header'
 import DISH_STORE from '../store'
+// VINDICATEDIAMSELFISHIAMWRONGIAMRIGHTISWEARIMRIGHTISWEARIKNEWITALLALONG
+
 
 const Dashboard = React.createClass({
-	 render: function() {
-	 	return (
-	 		<div className='dashboard' >
-	 			<Header />
-	 			<h3>dashboard</h3>
-	 			<DishContainer />
-	 		</div>
-	 	)
- 	}
+	getInitialState() {
+			return DISH_STORE._getData()
+	},
+
+	componentWillMount: function() {
+		DISH_STORE.on('updateContent',
+		(obj)=> {
+			this.setState(DISH_STORE.getData())
+		})
+	},
+	render: function() {
+	 return (
+	 	<div className='dashboard' >
+	 		<Header />
+	 		<h3>dashboard</h3>
+	 		<DishContainer />
+	 	</div>
+	 )
+ }
 })
 
 const DishContainer = React.createClass({
