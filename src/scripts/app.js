@@ -2,9 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import init from './init'
-import LoginView from './views/LogInView.js'
+import LoginView from './views/loginView'
+import Dashboard from './views/dashboard'
+import DishesView from './views/dishesView'
+import ComposeView from './views/composeView'
 
-
+//STEP 5 (build your client side api routes)
 const app = function() {
   const AppRouter = Backbone.Router.extend({
     routes: {
