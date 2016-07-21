@@ -1,5 +1,5 @@
 
-import {User} from './models/models'
+import {User} from './models/models.js'
 
 const ACTIONS = {
   registerUser: function(userObj){
@@ -30,7 +30,17 @@ const ACTIONS = {
   },
   saveDish: function(dishObj){
     var dish = new DishModel(dishObj)
-    dish.save()
+    dish.save().then(
+      (resp)=>{
+        alert('Ya posted a dish!')
+        console.log(resp)
+        location.hash = "home"
+      },
+      (err)=>{
+        alert('ya done goofed')
+        console.log(err);
+      }
+    )
   }
 }
 

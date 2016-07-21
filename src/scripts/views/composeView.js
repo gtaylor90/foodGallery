@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './header'
 import ACTIONS from '../actions'
-import {User} from './models/models'
+import {User} from '../models/models'
 
 const ComposeView = React.createClass({
 	 render: function() {
@@ -43,17 +43,17 @@ const DishPostingForm = React.createClass({
 		return (
 			<div className="dishPostingForm">
 				<form onSubmit={this._handlePost} >
-					<input type="text" name="postTitle" placeholder="Ender the dish title" />
+					<input type="text" name="postTitle"
+					placeholder="enter the dish title" />
 					<textarea class="u-full-width"
 					name="postDescription"
 					placeholder="Describe dat food"></textarea>
-					// fixt the style on this
+					{/*fix the styling on this*/}
 					<input type="text" name="postLocation"
-					placeholder="Ender the Location" />
+					placeholder="enter the Location" />
 					<input type="text" name="rating"
-					placeholder="Ender the Rating" />
-					<input type="text" name=""
-					//fix the styling on this
+					placeholder="enter the Rating" />
+					{/*fix the styling on this*/}
 					<button type="submit">Post dat</button>
 				</form>
 			</div>

@@ -6,6 +6,7 @@ import LoginView from './views/loginView'
 import Dashboard from './views/dashboard'
 import DishesView from './views/dishesView'
 import ComposeView from './views/composeView'
+import {User} from './models/models'
 
 //STEP 5 (build your client side api routes)
 const app = function() {
@@ -34,6 +35,11 @@ const app = function() {
     },
     initialize: function(){
       Backbone.history.start()
+      this.on('route', function(hndlrName){
+        if(!User.getCurrentUser()){
+          location.hash= "login"
+        }
+      })
     }
 
   })
