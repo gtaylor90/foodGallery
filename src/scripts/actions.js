@@ -4,6 +4,10 @@ import {DishModel} from './models/models.js'
 
 
 const ACTIONS = {
+  fetchDishes: function(){
+      console.log('hello world')
+  },
+
   registerUser: function(userObj){
     User.register(userObj).then(()=>this.logUserIn(userObj.email,
       userObj.password),
