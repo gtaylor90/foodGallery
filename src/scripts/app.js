@@ -6,6 +6,7 @@ import LoginView from './views/loginView'
 import Dashboard from './views/dashboard'
 import DishesView from './views/dishesView'
 import ComposeView from './views/composeView'
+import ACTIONS from './actions.js'
 import {User} from './models/models'
 
 const app = function() {
